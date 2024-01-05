@@ -33,7 +33,7 @@ function Create() {
                        };
             let res = await axios.post(API_URL,data)
             if(res.status === 201){                     // 201 for creating status
-                navigate('/dashboard')
+                navigate('/')
                 toast.success("data created")
             }
         } catch (error) {

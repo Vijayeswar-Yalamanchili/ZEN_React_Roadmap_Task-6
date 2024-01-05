@@ -28,19 +28,19 @@ function Edit() {
   const [bs, setBs] = useState("")
 
   const handleEdit = async() => {
-        try {
-            let data = {
-                        name,username,email,street,suite,city,zipcode,
-                        phone,website,compName,catchPhrase,bs, status:false
-                       };
-            let res = await axios.put(`${API_URL}/${id}`,data)
-            if(res.status === 200){                     // 201 for creating status
-                navigate('/dashboard')
-                toast.success("data edited succesfully")
-            }
-        } catch (error) {
-            toast.danger("data editing failed")
-        }
+    try {
+      let data = {
+                  name,username,email,street,suite,city,zipcode,
+                  phone,website,compName,catchPhrase,bs, status:false
+                 };
+      let res = await axios.put(`${API_URL}/${id}`,data)
+      if(res.status === 200){                     // 201 for creating status
+        navigate('/')
+        toast.success("data edited succesfully")
+      }
+    }catch (error) {
+      toast.danger("data editing failed")
+    }
   }
 
   const getUserdataById = async() => {
@@ -59,9 +59,8 @@ function Edit() {
         setCompName(res.data.compName)
         setCatchPhrase(res.data.catchPhrase)
         setBs(res.data.bs)
-      }
-      
-    } catch (error) {
+      }      
+    }catch (error) {
       toast.error("Internal error")
     }
   }

@@ -1,19 +1,12 @@
 import React from 'react'
-import Home from '../components/Home'
 import Dashboard from '../components/Dashboard'
 import Create from '../components/Create'
-import UserCard from '../components/common/UserCard'
 import Edit from '../components/Edit'
 import { Navigate } from 'react-router-dom'
 
 const AppRoutes = [
     {
         path : '/',
-        element : <Home/>,
-        exact : true,
-    },
-    {
-        path : '/dashboard',
         element : <Dashboard/>,
         exact : true,
     },
@@ -25,11 +18,6 @@ const AppRoutes = [
     {
         path : '/edit/:id',
         element : <Edit/>,
-        exact : true,
-    },
-    {
-        path : '/usercard',
-        element : <UserCard/>,
         exact : true,
     },
     {
